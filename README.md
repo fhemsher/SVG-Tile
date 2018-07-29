@@ -5,7 +5,7 @@ Windows 10 Stand-Alone Application: Draw SVG Tile Tessallations
 
 To run the application, in **localhost** select the index.htm file. 
 
-You may then create/save/edit SVG technical drawings.
+You may then create/save/edit SVG tile drawings.
 
 To preview how this application works go to: http://svg-tile.com
 
