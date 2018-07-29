@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>SVG Tile</title>
+
+
+
+<style type="text/css">
+<!--
+body {
+-moz-box-shadow: 4px 4px 5px #888;
+-webkit-box-shadow: 4px 4px 5px #888;
+box-shadow: 4px 4px 5px #888;
+}
+-->
+</style>
+
+</head>
+<body style='font-family:arial;' onLoad=sendSize()>
+    <!--width:1px;height:1px;overflow:hidden;visibility:hidden; -->
+<div id=changeDiv style=width:1px;height:1px;overflow:hidden;visibility:hidden;position:absolute;top:0px;left:0px>
+</div>
+
+<DIV id=containerDiv  style='background:#a7fc00;border-radius:10px;border:2px solid black;'>
+<center><TABLE>
+  <TR><TD align=center >
+<table style='width:100%;'>
+<tr ><td id=drawTessellateTopTable style='width:90%;' align=center><span id=drawTessellateEditSpan>Draw Tessellations</span></td><td align=right> <button onClick=parent.closeDrawTessellate()  >X</button></td></tr>
+</table>
+ </TD></TR>
+
+
+    <TR><TD align=center >
+
+<div id=changeColorDiv style="background:gainsboro;border:2px solid black;padding:3px;">
+<center>
+<select id="colorSelect" onChange=parent.colorSelected()>
+<option>Create Pallet Colors</option>
+</select>
+<table id=colorPalletTable style=height:25px;><tr></tr></table>
+Click on a polygon to set its desired color.
+<br><button disabled id=clearPalletColorButton  onClick=parent.clearPalletColorButtonClicked() >clear pallet</button>
+</center>
+</div>
+</TD></TR>
+    <TR><TD align=center >
+        Border <span id=borderColorSpan>Color</span> <select name="id=" id="borderColorSelect" onchange=parent.borderColorSelected()></select>
+</TD></TR>
+  <TR><TD align=center>
+<div id=tileUnitDiv style="width;200px;height;200px;">
+<svg overflow=visible xmlns="http://www.w3.org/2000/svg" id="tileUnitSVG"  pointer-events="all"  copyright="Francis Hemsher, 2013">
+</svg>
+</div></TD></TR>
+
+    <TR id=trChange1 style=visibility:hidden ><TD align=center >
+       Size:<button  onClick=parent.sizeAdjust(-1) style='height:25px;width:25px;padding:0px'><img width=20 height=20 src="../Images/minusRound.png" /></button><select title="tile size value" id=sizeAdjustSelect >
+        <option>.1</option>
+        <option>.2</option>
+        <option>.3</option>
+        <option>.4</option>
+        <option>.5</option>
+
+        </select><button onClick=parent.sizeAdjust(1)   style='height:25px;width:25px;padding:0px'><img width=20 height=20 src="../Images/plusRound.png" /></button>
+
+
+        &nbsp;Rotate:<button    onClick=parent.rotateAdjust(-1) style='height:25px;width:25px;padding:0px'><img width=20 height=20 src="../Images/minusRound.png" /></button><select title="rotate toggle value" id=rotateAdjustSelect >
+        <option>.5</option>
+        <option>1</option>
+        <option>2</option>
+        <option selected>5</option>
+        <option>10</option>
+        </select><button onClick=parent.rotateAdjust(1)     style='height:25px;width:25px;padding:0px'><img width=20 height=20 src="../Images/plusRound.png" /></button>
+</TD></TR>
+    <TR id=trChange2 style=visibility:hidden ><TD align=center>
+        <p></p>
+        Add/Remove Rows/Columns to the tessellation:
+    <nobr>Rows:<button  onClick=parent.rowAdjust(-1) style='height:25px;width:25px;padding:0px'><img width=20 height=20 src="../Images/minusRound.png" /></button><select title="Rows tessellate" id=rowAdjustSelect >
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        </select><button onClick=parent.rowAdjust(1)   style='height:25px;width:25px;padding:0px'><img width=20 height=20 src="../Images/plusRound.png" /></button>
+
+       &nbsp;  &nbsp; Columns:<button  onClick=parent.columnAdjust(-1) style='height:25px;width:25px;padding:0px'><img width=20 height=20 src="../Images/minusRound.png" /></button><select title="Columns tessellate" id=columnAdjustSelect >
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        </select><button onClick=parent.columnAdjust(1)   style='height:25px;width:25px;padding:0px'><img width=20 height=20 src="../Images/plusRound.png" /></button>
+       <br>
+       Trim Box: <button id=trimBoxButton disabled onClick=parent.createTrimBox()>create</button> <button id=cancelTrimBoxButton disabled onClick=parent.cancelTrimBox()>cancel</button>
+
+
+
+
+     </nobr>
+
+     </TD></TR>
+ 
+    <TR><TD>
+	<button id=drawTessellateCancelButton disabled title='cancel/remove this Tessellate' onClick=parent.cancelDrawTessellate()>cancel</button>
+	<button style=visibility:hidden id=drawTessellateCopyButton title='Toggle for each copy of this Tessellate' onClick=parent.copyDrawTessellate()>copy</button>
+	<button id=drawTessellateTopButton style=background:white;font-size:120%;font-weight:bold;color:maroon;visibility:hidden  title='Move to top' onClick=parent.topDrawTessellate()>&#x21E7;</button>
+	<button id=drawTessellateBotButton style=background:white;font-size:120%;font-weight:bold;color:maroon;   title='Move to bottom' onClick=parent.botDrawTessellate()>&#x21E9;</button>
+
+  <button style='background-color:red;visibility:hidden' id=drawTessellateDeleteButton  onClick=parent.removeCurrentDrawTessellate()>delete</button>
+
+    <button id=drawTessellateFinishButton disabled onClick=parent.finishDrawTessellate()>finish</button>
+
+    </TD></TR>
+</TABLE></center>
+
+</DIV>
+
+
+
+</body>
+<script>
+
+function writeCircleColorSelection()
+{
+   var DrawColors=parent.clrArray
+	for(var k=0;k<DrawColors.length;k++)
+	{
+        		var name=DrawColors[k][0]
+		var myColor=DrawColors[k][1]
+
+var option=document.createElement("OPTION")
+		option.style.backgroundColor=myColor
+		option.value=myColor
+		option.title=name+" "+myColor
+        if(parent.hexString.indexOf(myColor)!=-1)
+        option.style.color="white"
+
+		option.text=k+" "+name
+
+        colorSelect.appendChild(option)
+
+        var option=document.createElement("OPTION")
+		option.style.backgroundColor=myColor
+		option.value=myColor
+		option.title=name+" "+myColor
+        if(parent.hexString.indexOf(myColor)!=-1)
+        option.style.color="white"
+
+		option.text=k+" "+name
+
+        borderColorSelect.appendChild(option)
+
+	}
+
+}
+
+
+function sendSize()
+{
+    writeCircleColorSelection()
+
+
+   var width=containerDiv.scrollWidth+30
+   var height=containerDiv.scrollHeight+60
+
+       parent.sizeFrame('addElemTessellate',width,height)
+    parent.addElemTessellateLoad=true
+  parent.addElemTessellateCw=parent.addElemTessellateFrame.contentWindow
+}
+
+
+
+</script>
+</html>
