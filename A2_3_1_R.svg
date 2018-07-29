@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
-		<svg xmlns="http://www.w3.org/2000/svg" id="mainSVG" pointer-events="all" onkeyup="attachKey(evt)" width="88.978" height="102.153" EdgeLen="30" code="A2_3_1_R" template="A2_3_1_R">
-
-		<polygon id="BorderPoly" fill="none" pointer-events="none" stroke="red" stroke-width="4" transform="" points="36.2135,0 21.2135,25.981 0,47.194 15,73.1755 22.7645,102.153 52.765,102.153 73.978,80.9405 88.978,54.9585 73.978,28.978 43.978,28.978" />
-		<g id="mainPolyG" transform=""><polygon id="mainPoly" fill="rgb(252, 194, 0)" stroke="black" onmouseover="setChange(evt)" onmouseout="unhiliteChange(evt)" onclick="changeMe(evt)" points="73.978,28.978 43.978,28.978 28.978,54.9585 43.978,80.9405 73.978,80.9405 88.978,54.9585" seed="0" /><polygon fill="rgb(91, 146, 229)" stroke="black" stroke-width="1" onmouseover="setChange(evt)" onmouseout="unhiliteChange(evt)" onclick="changeMe(evt)" transform="" points="43.978,28.978 36.2135,0 21.2135,25.981 28.978,54.9585" seed="1" /><polygon fill="rgb(91, 146, 229)" stroke="black" stroke-width="1" onmouseover="setChange(evt)" onmouseout="unhiliteChange(evt)" onclick="changeMe(evt)" transform="" points="28.978,54.9585 0,47.194 15,73.1755 43.978,80.9405" seed="2" /><polygon fill="rgb(91, 146, 229)" stroke="black" stroke-width="1" onmouseover="setChange(evt)" onmouseout="unhiliteChange(evt)" onclick="changeMe(evt)" transform="" points="73.978,80.9405 43.978,80.9405 22.7645,102.153 52.765,102.153" seed="3" /><polygon fill="rgb(147, 112, 219)" stroke="black" stroke-width="1" onmouseover="setChange(evt)" onmouseout="unhiliteChange(evt)" onclick="changeMe(evt)" points="28.9775,54.9585 21.213,25.981 0,47.194" seed="4" /><polygon fill="rgb(147, 112, 219)" stroke="black" stroke-width="1" onmouseover="setChange(evt)" onmouseout="unhiliteChange(evt)" onclick="changeMe(evt)" points="43.978,80.9405 15.0005,73.1755 22.765,102.153" seed="5" /></g>
-
-
-		</svg>
