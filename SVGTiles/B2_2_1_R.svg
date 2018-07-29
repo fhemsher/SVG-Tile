@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+		<svg xmlns="http://www.w3.org/2000/svg" id="mainSVG" pointer-events="all" onkeyup="attachKey(evt)" width="103.978" height="77.943" EdgeLen="30" template="B2_2_1_R">
+
+		<polygon id="BorderPoly" fill="none" pointer-events="none" stroke="red" stroke-width="4" transform="" points="73.978,7.765 45,-3.8147e-006 30,25.981 0,25.981 15,51.962 30,77.9435 60,77.9435 75.001,51.962 103.978,59.726 88.978,33.7455" />
+		<g id="mainPolyG" transform=""><polygon id="mainPoly" fill="rgb(252, 194, 0)" stroke="black" onmouseover="setChange(evt)" onmouseout="unhiliteChange(evt)" onclick="changeMe(evt)" points="60,25.981 30,25.981 15,51.962 30,77.9435 60,77.9435 75,51.962" seed="0" /><polygon fill="rgb(147, 112, 219)" stroke="black" stroke-width="1" onmouseover="setChange(evt)" onmouseout="unhiliteChange(evt)" onclick="changeMe(evt)" points="30,25.981 0,25.981 15,51.9615" seed="1" /><polygon fill="rgb(147, 112, 219)" stroke="black" stroke-width="1" onmouseover="setChange(evt)" onmouseout="unhiliteChange(evt)" onclick="changeMe(evt)" points="60,25.981 45,-3.8147e-006 30,25.981" seed="2" /><polygon fill="rgb(91, 146, 229)" stroke="black" stroke-width="1" onmouseover="setChange(evt)" onmouseout="unhiliteChange(evt)" onclick="changeMe(evt)" transform="" points="73.978,7.765 45,-3.8147e-006 60,25.981 88.978,33.7455" seed="3" /><polygon fill="rgb(91, 146, 229)" stroke="black" stroke-width="1" onmouseover="setChange(evt)" onmouseout="unhiliteChange(evt)" onclick="changeMe(evt)" transform="" points="88.978,33.7455 60,25.981 75.001,51.962 103.978,59.726" seed="4" /></g>
+
+
+		</svg>
