@@ -70,7 +70,7 @@ box-shadow: 4px 4px 5px #888;
 
  </td></tr>
 <tr>
-<td align=center ><span id=drawPolygonStrokeBg >Stroke Color:</span>
+<td align=center >Stroke <span id=drawPolygonStrokeBg >Color</span>:
 <select  title="Stroke Color" onChange=parent.showDrawPolygonStrokeBg() id=drawPolygonStrokeSelect></select>
 width:
   <select onChange=parent.drawPolygonStrokeWidthSelected() id=drawPolygonStrokeWidthSelect>
@@ -96,7 +96,7 @@ Dash:<input type=checkbox id=drawPolygonStrokeDashCheck onClick=parent.drawPolyg
 </tr>
 
 <tr>
-<td align=center ><span id=drawPolygonFillBg >Fill Color:</span>
+<td align=center >Fill <span id=drawPolygonFillBg >Color</span>:
 <select  title="Fill Opacity" onChange=parent.showDrawPolygonFillBg() id=drawPolygonFillSelect></select>
 Opacity:
   <select onChange=parent.drawPolygonOpacitySelected() id=drawPolygonOpacitySelect>
@@ -188,7 +188,7 @@ function writePolygonColorSelection()
 
 
 	}
-	drawPolygonStrokeSelect.selectedIndex=2
+	drawPolygonStrokeSelect.selectedIndex=1
 	var clr=drawPolygonStrokeSelect.options[drawPolygonStrokeSelect.selectedIndex].value
 	drawPolygonStrokeBg.style.backgroundColor=clr
 }
