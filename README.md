@@ -9,7 +9,7 @@ To run the application, in **localhost** select the index.htm file.
 
 You may then create/save/edit SVG tile drawings.
 
-![](http://svg-tile.com/Images/intro.png)
+![](http://svg-tile.com/Images/circleTess.png)
 
 To preview how this application works go to: http://svg-tile.com
 
