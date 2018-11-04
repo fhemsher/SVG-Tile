@@ -207,6 +207,8 @@ function writePathEditColorSelection()
 		option.style.backgroundColor=myColor
 		option.value=myColor
 		option.title=name+" "+myColor
+        if(parent.hexString.indexOf(myColor)!=-1)
+        option.style.color="white"
 
 		option.text=k
                 pathEditZoneMarkerFillColorSelect.appendChild(option)
@@ -216,6 +218,8 @@ function writePathEditColorSelection()
 		option.style.backgroundColor=myColor
 		option.value=myColor
 		option.title=name+" "+myColor
+        if(parent.hexString.indexOf(myColor)!=-1)
+        option.style.color="white"
 
 		option.text=k
         drawPathEditStrokeSelect.appendChild(option)
@@ -231,6 +235,8 @@ function writePathEditColorSelection()
 		option.style.backgroundColor=myColor
 		option.value=myColor
 		option.title=name+" "+myColor
+        if(parent.hexString.indexOf(myColor)!=-1)
+        option.style.color="white"
 
 		option.text=k
         drawPathEditFillSelect.appendChild(option)
@@ -239,10 +245,10 @@ function writePathEditColorSelection()
 
 
 	}
-	drawPathEditStrokeSelect.selectedIndex=4
+	drawPathEditStrokeSelect.selectedIndex=234
 	var clr=drawPathEditStrokeSelect.options[drawPathEditStrokeSelect.selectedIndex].value
 	drawPathEditStrokeBg.style.backgroundColor=clr
-         	pathEditZoneMarkerFillColorSelect.selectedIndex=7
+         	pathEditZoneMarkerFillColorSelect.selectedIndex=140
 	var clr=pathEditZoneMarkerFillColorSelect.options[pathEditZoneMarkerFillColorSelect.selectedIndex].value
 	pathEditZoneMarkerFillBg.style.backgroundColor=clr
 
